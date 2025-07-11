@@ -1,0 +1,3 @@
+"My account is locked, and I can't reset my password."
+"What are the shipping options for international orders?"
+"I received a damaged item. My order number is #7890."
