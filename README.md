@@ -1,53 +1,70 @@
-# How We Can Automate Customer Support with NeuroLink
+# Customer Support Automation with NeuroLink and Confluence
+
+This project is an AI-first customer support system that integrates with your internal Confluence documentation to provide intelligent, automated responses to user queries.
 
 ## The Challenge
-Companies face thousands of repetitive support queries across email, chat, and in-app messages—leading to overloaded agents and long response times.
+
+Companies face a high volume of repetitive support queries across various channels, leading to overloaded agents and slow response times. This project aims to solve that problem by providing a smart, automated solution.
 
 ## The Solution
-We built an AI-first support system that integrates with CRM platforms, engineering tools like GitHub, and internal documentation to handle both simple and complex queries efficiently.
 
-## Enter NeuroLink
-NeuroLink connects seamlessly to systems like Salesforce, Zendesk, GitHub, and internal product manuals. It leverages multiple AI providers (OpenAI, Claude, Gemini), dynamically selecting the most suitable model based on query type.
+We've built an AI-powered support system that connects directly to your Confluence instance. It uses natural language processing to understand user queries, search for relevant documentation, and provide accurate, context-aware answers.
 
-### Smart Query Routing
-- Simple queries are routed to fast, low-cost models.
-- Complex technical questions go to advanced models like GPT-4 or Claude—ensuring a balance of speed, cost-efficiency, and accuracy.
+## Key Features
 
-### Real Integrations in Action
-- **CRM Example:** NeuroLink fetches refund or order details directly from platforms like Salesforce.
-- **GitHub Example:** It searches engineering repositories and issue trackers to provide accurate bug context or resolutions.
-- **Documentation Example:** It scans internal manuals to provide step-by-step answers—no predefined scripting needed.
+*   **Intelligent Query Routing:** Automatically classifies queries to determine the best AI model for the job, balancing speed, cost, and accuracy.
+*   **Live Confluence Integration:** Uses a custom MCP (Model Context Protocol) server to perform real-time searches of your Confluence documentation.
+*   **Dynamic Content Retrieval:** Not only finds relevant articles but also fetches their full content to provide comprehensive answers.
+*   **Formatted for Readability:** Responses are formatted using markdown to ensure they are clear, concise, and easy to understand.
 
-### Behind the Scenes
-- **generateText:** AI-generated response
-- **context:** Includes session or user metadata
-- **enableEvaluation:** Ensures response clarity and accuracy
-- **MCP tools:** Handle CRM, GitHub, and documentation access
-- **Fallbacks:** Seamlessly switch providers on failure
+## Demonstration
+
+<video src="customerSupport.mov" width="100%"></video>
+
+## How It Works
+
+1.  **User Query:** The application prompts the user for a support query in the terminal.
+2.  **Query Classification:** The query is classified as "simple" or "complex" to determine the most appropriate AI model.
+3.  **MCP Server:** The application sends the query to the Confluence MCP server.
+4.  **Confluence Search:** The MCP server performs a live search of your Confluence instance using the provided API credentials.
+5.  **Content Retrieval:** If a relevant document is found, the MCP server fetches the full content of that page.
+6.  **Response Generation:** The retrieved content is combined with the user's original query and sent to the AI provider to generate a helpful, context-aware response.
+7.  **Formatted Output:** The AI's response is formatted using markdown and displayed to the user in the terminal.
 
 ## How to Use
+
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/YasmeenOgo/CustomerSupportAutomation.git
-    cd CustomerSupportAutomation/customer-support-agent
+    cd CustomerSupportAutomation
     ```
 2.  **Install dependencies:**
     ```bash
     npm install
     ```
 3.  **Set up your environment:**
-    - Rename `.env.example` to `.env`.
-    - Add your `GOOGLE_AI_API_KEY` to the `.env` file.
+    *   Create a `.env` file in the root of the project.
+    *   Add your Confluence credentials to the `.env` file:
+        ```
+        CONFLUENCE_BASE_URL=https://your-domain.atlassian.net/wiki
+        ATLASSIAN_USERNAME=your-email@example.com
+        ATLASSIAN_API_TOKEN=your-api-token
+        ```
+    *   Add your Google AI API key to the `.env` file:
+        ```
+        GOOGLE_AI_API_KEY=your-google-ai-api-key
+        ```
 4.  **Run the application:**
     ```bash
-    node index.js
+    npm start
     ```
 5.  **Interact with the agent:**
-    - The terminal will prompt you with `>`.
-    - Type your support query and press Enter.
-    - Type `quit` to exit the application.
+    *   The terminal will prompt you with `>`.
+    *   Type your support query and press Enter.
+    *   Type `quit` to exit the application.
 
 ## The Impact
-- Most tickets are resolved autonomously.
-- Average response time dropped significantly.
-- Agent workload reduced without compromising on quality.
+
+*   **Autonomous Ticket Resolution:** A significant portion of support tickets can be resolved without human intervention.
+*   **Reduced Response Times:** Users receive instant answers to their questions, improving customer satisfaction.
+*   **Lower Agent Workload:** Support agents can focus on complex, high-value interactions, improving efficiency and job satisfaction.
