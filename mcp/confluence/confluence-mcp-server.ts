@@ -22,7 +22,7 @@ function parseEnv(envPath: string): { [key: string]: string } {
 }
 
 const env = parseEnv(envPath);
-console.log('[ConfluenceMCP Server] Parsed .env variables:', env);
+// console.log('[ConfluenceMCP Server] Parsed .env variables:', env);
 
 interface SearchParams {
   query: string;
@@ -37,7 +37,7 @@ class ConfluenceMcpServer {
     this.baseUrl = "https://juspay.atlassian.net/wiki";
     this.email = env.ATLASSIAN_USERNAME;
     this.apiToken = env.ATLASSIAN_API_TOKEN;
-    console.log(`[ConfluenceMCP Server] Initialized with baseUrl: ${!!this.baseUrl}, email: ${!!this.email}, apiToken: ${!!this.apiToken}`);
+    // console.log(`[ConfluenceMCP Server] Initialized with baseUrl: ${!!this.baseUrl}, email: ${!!this.email}, apiToken: ${!!this.apiToken}`);
   }
 
   async search({ query }: SearchParams): Promise<{ success: boolean; message: string; results?: any[] }> {
@@ -49,7 +49,7 @@ class ConfluenceMcpServer {
     }
 
     try {
-      console.log(`[ConfluenceMCP Server] Searching for: ${query}`);
+      // console.log(`[ConfluenceMCP Server] Searching for: ${query}`);
       
       const response = await axios.get(`${this.baseUrl}/rest/api/content/search`, {
         params: {
@@ -93,7 +93,7 @@ class ConfluenceMcpServer {
     }
 
     try {
-      console.log(`[ConfluenceMCP Server] Fetching content for page ID: ${pageId}`);
+      // console.log(`[ConfluenceMCP Server] Fetching content for page ID: ${pageId}`);
       
       const response = await axios.get(`${this.baseUrl}/rest/api/content/${pageId}`, {
         params: {

@@ -11,14 +11,14 @@ interface Query {
 }
 
 export async function handleSupportQuery(query: Query) {
-  console.log(`Received query: "${query.text}"`);
+  // console.log(`Received query: "${query.text}"`);
 
   const neurolink = new NeuroLink();
 
   // 1. Intelligent Routing
   const complexity = await classifyQuery(query.text);
   const model = selectModel(complexity);
-  console.log(`Query complexity: ${complexity}, Selected model: ${model}`);
+  // console.log(`Query complexity: ${complexity}, Selected model: ${model}`);
 
   // 2. Prepare context for the AI
   const context = {
@@ -46,9 +46,9 @@ export async function handleSupportQuery(query: Query) {
     content += chunk.content || "";
   }
 
-  console.log('--- AI Response ---');
+  // console.log('--- AI Response ---');
   console.log(content);
-  console.log('-------------------');
+  // console.log('-------------------');
 
   return { content };
 }
