@@ -19,7 +19,7 @@ We've built an AI-powered support system that connects directly to your Confluen
 
 ## Demonstration
 
-<video src="customerSupport.mov" width="100%"></video>
+https://github.com/YasmeenOgo/CustomerSupportAutomation/blob/master/customerSupport.mov
 
 ## How It Works
 
