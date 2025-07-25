@@ -1,2 +1,9 @@
-node_modules
+# Dependencies
+/node_modules
+/dist
+
+# Mac
+.DS_Store
+
+# Env
 .env

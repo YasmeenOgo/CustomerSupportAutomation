@@ -2,8 +2,10 @@
   "name": "customer-support-agent",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
+    "start": "npm run build && node dist/src/index.js",
+    "build": "tsc --outDir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,7 +13,24 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@juspay/neurolink": "^4.1.1",
-    "dotenv": "^17.2.0"
+    "@juspay/neurolink": "^6.1.0",
+    "@types/cheerio": "^0.22.35",
+    "@types/express": "^5.0.3",
+    "@types/pdfkit": "^0.17.0",
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "node-schedule": "^2.1.1",
+    "nodemailer": "^6.10.1",
+    "pdfkit": "^0.17.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/node-schedule": "^2.1.7",
+    "@types/nodemailer": "^6.4.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
   }
 }

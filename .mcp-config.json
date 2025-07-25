@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "confluence": {
+      "command": "ts-node",
+      "args": ["mcp/confluence/confluence-mcp-server.ts"]
+    }
+  }
+}
