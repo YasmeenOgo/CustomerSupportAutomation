@@ -8,7 +8,7 @@ Companies face a high volume of repetitive support queries across various channe
 
 ## The Solution
 
-We've built an AI-powered support system that connects directly to your Confluence instance. It uses natural language processing to understand user queries, search for relevant documentation, and provide accurate, context-aware answers.
+We've developed an AI-powered support system that integrates directly with your Confluence instance. It utilises natural language processing to comprehend user queries, locate relevant documentation, and deliver accurate, context-aware responses.
 
 ## Key Features
 
